@@ -13,7 +13,7 @@ Saves the sandbox filesystem for later restore on providers with snapshot suppor
 
 - User-requested checkpoint before experiments.
 
-Requires `snapshot` in `list_providers`. Not on E2B in kaxa.
+Requires `snapshot` in `list_providers`. Not on E2B or Blaxel in kaxa.
 
 ## Call
 

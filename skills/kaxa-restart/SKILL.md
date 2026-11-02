@@ -17,7 +17,7 @@ Not `destroy`. Not `restore_snapshot`. E2B also auto-pauses after ~1 hour idle; 
 
 ## Call
 
-`list_providers`: need `restart` capability (E2B, Docker, Daytona; not Modal/Sprites for this flag—check live response).
+`list_providers`: need `restart` capability (E2B, Docker, Daytona; not Modal, Sprites, or Blaxel—check live response).
 
 Required `name`. Optional `provider`.
 

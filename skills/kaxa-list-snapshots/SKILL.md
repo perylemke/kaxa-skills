@@ -14,7 +14,7 @@ Lists snapshots with provider and source sandbox for each entry.
 - Before `restore_snapshot` or `delete_snapshot` to obtain snapshot `id`.
 - Audit saved states.
 
-Requires `snapshot` capability on the provider (`list_providers` first). E2B has no snapshots in kaxa.
+Requires `snapshot` capability on the provider (`list_providers` first). E2B and Blaxel have no snapshots in kaxa.
 
 ## Call
 

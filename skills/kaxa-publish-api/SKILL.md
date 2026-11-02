@@ -25,7 +25,9 @@ Required `name`, `api_cmd` (argv). Process must listen on `0.0.0.0` and `api_por
 
 E2B: publish port must match create-time API port when applicable.
 
-Public preview URLs on E2B, Docker, and Daytona are reachable by anyone with the link.
+Blaxel rejects ports 80, 443, and 8080. Its preview is named `kaxa-api` and is always public.
+
+Public preview URLs on E2B, Docker, Daytona, and Blaxel are reachable by anyone with the link.
 
 ## Result
 

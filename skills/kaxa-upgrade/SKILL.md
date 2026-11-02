@@ -29,5 +29,5 @@ If unsupported, the error lists providers that offer upgrade.
 
 ## Mistakes
 
-- Calling upgrade on Daytona/E2B/Modal when capability is false.
+- Calling upgrade on Daytona, E2B, Modal, or Blaxel when capability is false.
 - Confusing with `restart` or `restore_snapshot`.
