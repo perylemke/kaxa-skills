@@ -31,6 +31,6 @@ Creating with `running` (tmux) and `public` without `api` is refused at create; 
 
 ## Mistakes
 
-- Using on E2B/Modal where public URL auth is unavailable.
+- Using on E2B, Modal, or Blaxel where public URL auth is unavailable. Blaxel `api` previews are public and this tool cannot make them private.
 - Typos in `auth` (`open`, `private`).
 - Expecting `set_url_auth` to publish an API process.

@@ -36,4 +36,4 @@ Tool error: missing sandbox, provider failure, or timeout. No stdin (EOF). Each 
 - Editing files on the host expecting sandbox visibility.
 - Treating test failure exit code as MCP tool failure.
 - Omitting `cd <work_dir>` for project commands.
-- Relying on stdin.
+- Relying on stdin. Blaxel has no MCP console; the interactive terminal is the CLI `kaxa console`.

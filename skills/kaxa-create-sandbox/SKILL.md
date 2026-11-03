@@ -7,7 +7,7 @@ description: Calls the kaxa MCP tool create_sandbox. Use when starting isolated 
 
 ## Overview
 
-Creates a named sandbox. With `sync: true`, copies a local Git repository, installs toolchains and dependencies, and returns `work_dir`.
+Creates a named sandbox. With `sync: true`, copies a local Git repository, installs toolchains and dependencies, and returns `work_dir`. `no_install` copies the repository and skips both; the dependency commands come back in `skipped_commands`.
 
 ## When to use
 
@@ -26,9 +26,9 @@ Required `name`. Optional `provider`.
 
 - `dir` and `no_install` require `sync`.
 - `work_dir` in the result only when `sync` is true.
-- `api` requires `api_cmd`; default `api_port` 8000; port 8080 reserved when `running` is true.
-- `public` with `running` and without `api` is refused (tmux has no login).
-- `template` only when `capabilities.template` is true.
+- `api` requires `api_cmd`; default `api_port` 8000; port 8080 reserved when `running` is true. Blaxel rejects ports 80, 443, and 8080.
+- `public` with `running` and without `api` is refused (tmux has no login). `running` and `public` only when those capabilities are true. Blaxel has neither.
+- `template` only when `capabilities.template` is true (E2B, Docker, Daytona, Blaxel). A Blaxel template keeps user `root` and home `/root`.
 
 `api_env`: `KEY=VALUE`, or bare `KEY` only if listed in server `KAXA_MCP_API_ENV`. Reserved: `HOME`, `USER`, `PATH`, and names starting with `KAXA_`, `MODAL_TOKEN_`, `FLY_`, `SPRITES_`. No commas in values.
 
