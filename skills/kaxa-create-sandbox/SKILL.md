@@ -7,7 +7,7 @@ description: Calls the kaxa MCP tool create_sandbox. Use when starting isolated 
 
 ## Overview
 
-Creates a named sandbox. With `sync: true`, copies a local Git repository, installs toolchains and dependencies, and returns `work_dir`.
+Creates a named sandbox. With `sync: true`, copies a local Git repository, installs toolchains and dependencies, and returns `work_dir`. `no_install` copies the repository and skips both; the dependency commands come back in `skipped_commands`.
 
 ## When to use
 

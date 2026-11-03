@@ -7,7 +7,7 @@ description: Calls the kaxa MCP tool sync_repository to add another Git repo to 
 
 ## Overview
 
-Copies one more local Git repository into a sandbox, then installs dependencies unless `no_install`. Modal sandboxes created without `sync` reject this tool. Blaxel accepts it on any sandbox and writes under `/root/workspace`.
+Copies one more local Git repository into a sandbox, then installs the toolchain and dependencies unless `no_install`. Modal sandboxes created without `sync` reject this tool. Blaxel accepts it on any sandbox and writes under `/root/workspace`.
 
 ## When to use
 
