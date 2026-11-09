@@ -31,7 +31,7 @@ Public preview URLs on E2B, Docker, Daytona, and Blaxel are reachable by anyone 
 
 ## Result
 
-`id`, `provider`, `status` (e.g. published).
+`id`, `provider`, `status` (e.g. published), and `url` and `auth` when the provider reports them. A failed inspect after a successful publish leaves the service up and omits the URL.
 
 ## Mistakes
 

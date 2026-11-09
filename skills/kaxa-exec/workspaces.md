@@ -1,6 +1,6 @@
 # Sandbox workspace paths
 
-After `create_sandbox` with `sync: true`, the response `work_dir` is where the repository lives. `exec` starts in the provider workspace directory (parent of `work_dir`), not in `work_dir`. Run project commands with `cd <work_dir>`.
+After `create_sandbox` with `sync: true`, the response `work_dir` is where the repository lives. Pass that path as `exec` `cwd`. Omit `cwd` and the command starts in the provider workspace directory (parent of `work_dir`), not in `work_dir`. `inspect` reports `home_dir` and, for a synced sandbox, `workspace_dir`.
 
 | Provider | User | With `sync` (`work_dir`) | Without `sync` (exec start) |
 | --- | --- | --- | --- |

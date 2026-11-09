@@ -1,6 +1,6 @@
 ---
 name: kaxa-exec
-description: Calls the kaxa MCP tool exec to run an argv in a sandbox. Use when building, testing, or editing inside a kaxa sandbox, or when a command needs a shell, times out, or returns truncated output.
+description: Calls the kaxa MCP tool exec to run an argv in a sandbox. Use when building, testing, or editing inside a kaxa sandbox, or when a command needs a working directory, a shell, times out, or returns truncated output.
 ---
 
 # exec
@@ -19,21 +19,21 @@ Workspace paths: [workspaces.md](workspaces.md).
 
 ## Call
 
-Required `name` and `command` (argv; first element is the binary). Optional `provider`, `timeout_seconds` (default 1800, max 7200).
+Required `name` and `command` (argv; first element is the binary). Optional `provider`, `cwd`, `timeout_seconds` (default 1800, max 7200).
 
-Shell features require explicit `["bash", "-c", "cd <work_dir> && ..."]`. Never pass a single string expecting shell parsing.
+`cwd` is an absolute path inside the sandbox. Pass the `work_dir` from `create_sandbox` or `sync_repository`. Omit it and the command starts in the provider workspace or home.
 
-With sync create, start project work from `work_dir` via `cd`.
+Shell features require explicit `["bash", "-c", "..."]`. Never pass a single string expecting shell parsing. Use `cwd` for the directory; reserve `bash -c` for pipes, globs, and redirection.
 
 ## Result
 
-`exit_code`, `stdout`, `stderr`, `truncated`. Non-zero exit is success of the tool with failed command semantics.
+`exit_code`, `stdout`, `stderr`, `truncated`, and `timed_out` when the command was stopped. Non-zero exit is success of the tool with failed command semantics.
 
-Tool error: missing sandbox, provider failure, or timeout. No stdin (EOF). Each stream keeps first 256 KiB; remainder dropped with marker when `truncated` is true.
+Tool error: missing sandbox or provider failure. A timeout is a result with `timed_out` true, `exit_code` `-1`, and the output captured so far. No stdin (EOF). Each stream keeps the last 256 KiB; earlier bytes are dropped with a marker when `truncated` is true.
 
 ## Mistakes
 
 - Editing files on the host expecting sandbox visibility.
 - Treating test failure exit code as MCP tool failure.
-- Omitting `cd <work_dir>` for project commands.
+- Omitting `cwd` set to `work_dir` for project commands.
 - Relying on stdin. Blaxel has no MCP console; the interactive terminal is the CLI `kaxa console`.
