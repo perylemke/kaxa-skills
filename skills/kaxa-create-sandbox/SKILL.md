@@ -32,11 +32,13 @@ Required `name`. Optional `provider`.
 
 `api_env`: `KEY=VALUE`, or bare `KEY` only if listed in server `KAXA_MCP_API_ENV`. Reserved: `HOME`, `USER`, `PATH`, and names starting with `KAXA_`, `MODAL_TOKEN_`, `FLY_`, `SPRITES_`. No commas in values.
 
+`env`: names only, never `KEY=VALUE`. Each name is copied from the server environment only when it is listed in `KAXA_MCP_ENV`. An empty allowlist refuses every name. `env_file`: pass a dotenv path inside the server root (`KAXA_MCP_ROOT` or the working directory). Do not open the file and do not paste secrets. Names in `env` replace the same key from the file. Do not print the environment with `exec`.
+
 Create with sync can take minutes; progress goes to MCP stderr.
 
 ## Result
 
-`id`, `provider`, optional `work_dir`, `skipped_commands` (with `no_install`), optional `url` and `auth`.
+`id`, `provider`, optional `work_dir`, `skipped_commands` (with `no_install`), optional `url` and `auth`, optional `env_keys` (names only, never values).
 
 Failed copy, install, or API publish deletes the sandbox. Failed `public` change keeps the sandbox; the error says so.
 
@@ -46,3 +48,4 @@ Failed copy, install, or API publish deletes the sandbox. Failed `public` change
 - Assuming local file edits appear in the sandbox.
 - Calling without checking `sync` / `api` / `template` capabilities.
 - Pasting secrets into `api_env` instead of allowlisted bare keys.
+- Putting `KEY=VALUE` in `env`, opening `env_file`, or printing variables with `exec`.
