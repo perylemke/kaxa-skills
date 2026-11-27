@@ -30,7 +30,7 @@ Provider must be available.
 
 `id`, `provider`, `status`.
 
-On Modal, Docker, and Daytona, snapshots outlive the sandbox. On Sprites, checkpoints are destroyed with the sprite.
+On Modal, Docker, and Daytona, snapshots outlive the sandbox. On Vercel, manual snapshots outlive it and automatic ones are deleted with it. On Sprites, checkpoints are destroyed with the sprite.
 
 ## Mistakes
 

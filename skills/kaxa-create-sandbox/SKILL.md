@@ -27,8 +27,9 @@ Required `name`. Optional `provider`.
 - `dir` and `no_install` require `sync`.
 - `work_dir` in the result only when `sync` is true.
 - `api` requires `api_cmd`; default `api_port` 8000; port 8080 reserved when `running` is true. Blaxel rejects ports 80, 443, and 8080.
-- `public` with `running` and without `api` is refused (tmux has no login). `running` and `public` only when those capabilities are true. Blaxel has neither.
-- `template` only when `capabilities.template` is true (E2B, Docker, Daytona, Blaxel). A Blaxel template keeps user `root` and home `/root`.
+- `public` with `running` and without `api` is refused (tmux has no login). `running` and `public` only when those capabilities are true. Blaxel and Vercel have neither.
+- `cpu` only when `capabilities.cpu` is true. On Vercel it is 1 or an even number of vCPUs (plan caps: Hobby 4, Pro 8, Enterprise 32). `network_block` blocks all outbound traffic (Daytona, Vercel); toolchain downloads then fail.
+- `template` only when `capabilities.template` is true (E2B, Docker, Daytona, Blaxel, Vercel). A Blaxel template keeps user `root` and home `/root`. On Vercel the template is a snapshot ID.
 
 `api_env`: `KEY=VALUE`, or bare `KEY` only if listed in server `KAXA_MCP_API_ENV`. Reserved: `HOME`, `USER`, `PATH`, and names starting with `KAXA_`, `MODAL_TOKEN_`, `FLY_`, `SPRITES_`. No commas in values.
 

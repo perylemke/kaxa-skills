@@ -36,4 +36,4 @@ Tool error: missing sandbox or provider failure. A timeout is a result with `tim
 - Editing files on the host expecting sandbox visibility.
 - Treating test failure exit code as MCP tool failure.
 - Omitting `cwd` set to `work_dir` for project commands.
-- Relying on stdin. Blaxel has no MCP console; the interactive terminal is the CLI `kaxa console`.
+- Relying on stdin. Blaxel and Vercel have no MCP console; the interactive terminal is the CLI `kaxa console`.
