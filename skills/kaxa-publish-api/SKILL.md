@@ -27,7 +27,9 @@ E2B: publish port must match create-time API port when applicable.
 
 Blaxel rejects ports 80, 443, and 8080. Its preview is named `kaxa-api` and is always public.
 
-Public preview URLs on E2B, Docker, Daytona, and Blaxel are reachable by anyone with the link.
+Vercel declares the port at create, so a new port restarts the sandbox once; port 23456 is reserved and the process must listen on `0.0.0.0`.
+
+Public preview URLs on E2B, Docker, Daytona, Blaxel, and Vercel are reachable by anyone with the link.
 
 ## Result
 

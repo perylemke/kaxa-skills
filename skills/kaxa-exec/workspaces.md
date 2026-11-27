@@ -10,9 +10,10 @@ After `create_sandbox` with `sync: true`, the response `work_dir` is where the r
 | docker | agent | `/home/agent/workspace/<repo>` | image default (not workspace) |
 | daytona | daytona | `/home/daytona/workspace/<repo>` | image default (not workspace) |
 | blaxel | root | `/root/workspace/<repo>` | `/root` |
+| vercel | vercel-sandbox | `/vercel/sandbox/workspace/<repo>` | `/vercel/sandbox` |
 
 `<repo>` is the basename of the copied local directory.
 
-Custom `template` images must keep the same user and home as the provider base layout (E2B: `user`, `/home/user`; Docker: `agent`, `/home/agent`; Daytona: `daytona`, `/home/daytona`; Blaxel: `root`, `/root`). kaxa does not detect a wrong user.
+Custom `template` images must keep the same user and home as the provider base layout (E2B: `user`, `/home/user`; Docker: `agent`, `/home/agent`; Daytona: `daytona`, `/home/daytona`; Blaxel: `root`, `/root`). On Vercel a template is a snapshot ID, which keeps the user and home of the sandbox it came from. kaxa does not detect a wrong user.
 
 `publish_api` with empty `work_dir` uses the provider home from workspace layout, not `work_dir` from create.

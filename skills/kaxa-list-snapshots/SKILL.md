@@ -26,7 +26,7 @@ Optional `name` (sandbox) and optional `provider`. Omit both to search every con
 
 Partial provider failures go to `warnings`. Use returned `id` values in restore/delete, not guessed names.
 
-Modal snapshots expire after 30 days and list only on the machine that created them. Docker and Daytona snapshots persist until deleted and list from any machine.
+Modal snapshots expire after 30 days and list only on the machine that created them. Vercel snapshots are manual, persist until deleted, and list from any machine, but their comments are stored only on the machine that created them. Docker and Daytona snapshots persist until deleted and list from any machine.
 
 ## Mistakes
 

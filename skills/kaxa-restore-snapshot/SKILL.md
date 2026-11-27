@@ -25,7 +25,7 @@ Required `name` (source sandbox), `snapshot` (id). Optional `provider`, `target`
 
 | `snapshot_restore` | `target` |
 | --- | --- |
-| `in_place` (Sprites) | Rejected; overwrites `name` |
+| `in_place` (Sprites, Vercel) | Rejected; overwrites `name` |
 | `new_sandbox` (Modal, Docker, Daytona) | Required, must differ from `name`; creates new sandbox |
 
 ## Result
